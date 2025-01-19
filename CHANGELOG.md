@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.2.0...v1.3.0) (2025-01-19)
+
+
+### 🚀 New Features
+
+* update chart and project ([4e32233](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/commit/4e32233cb0085d13cb6faebdf94bd0100a4db23c))
+
 ## [1.2.0](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.1.0...v1.2.0) (2024-08-19)
 
 
