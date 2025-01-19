@@ -1,9 +1,9 @@
 apiVersion: v2
+name: kafka-ui
+description: |
+  This chart installs kafka-ui
+version: "0"
 dependencies:
   - name: kafka-ui
     repository: https://provectus.github.io/kafka-ui-charts
-    version: "*.*.*"
-description: |
-  This chart installs kafka-ui
-name: kafka-ui
-version: "0"
+    version: "0.7.6"
