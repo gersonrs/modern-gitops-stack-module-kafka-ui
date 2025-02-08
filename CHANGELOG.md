@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.3.2...v1.3.3) (2025-02-08)
+
+
+### ⌨️ Code Refactoring
+
+* try adjust code 5 ([7b21279](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/commit/7b212790862d44f59ad817a6c65c7d662b148c5c))
+
 ## [1.3.2](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.3.1...v1.3.2) (2025-02-08)
 
 
