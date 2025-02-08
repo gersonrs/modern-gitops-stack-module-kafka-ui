@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.2](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.3.1...v1.3.2) (2025-02-08)
+
+
+### 📚 Documentation
+
+* **terraform-docs:** generate docs and write to README.adoc ([f0ef19a](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/commit/f0ef19a6a982ddaeab61abb285b0d39cf7f03523))
+
+
+### ⌨️ Code Refactoring
+
+* adjust workflows ([804e247](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/commit/804e247efd6ef84de09616dca18d1439d759a86b))
+* adjust workflows ([377259e](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/commit/377259e780a147d36be6fc9d184a56a0e9fa4437))
+
 ## [1.3.1](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.3.0...v1.3.1) (2025-02-08)
 
 
