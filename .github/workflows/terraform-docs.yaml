@@ -4,9 +4,7 @@ name: "terraform-docs"
 on:
   pull_request:
     branches:
-      - 'main'
-    paths:
-      - '**.tf'
+      - "main"
 
 jobs:
   terraform-docs:
