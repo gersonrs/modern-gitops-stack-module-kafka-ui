@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.3.3...v1.4.0) (2026-05-20)
+
+
+### 🚀 New Features
+
+* migrate from Traefik Ingress to Istio HTTPRoute and add gateway variables ([#13](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/issues/13)) ([902d617](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/902d617ac716ebc09792634d4ff333c86538a643))
+
 ## [1.3.3](https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui/compare/v1.3.2...v1.3.3) (2025-02-08)
 
 
