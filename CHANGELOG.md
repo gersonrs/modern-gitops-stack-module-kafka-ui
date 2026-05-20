@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.5.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.4.0...v1.5.0) (2026-05-20)
+
+
+### 🚀 New Features
+
+* add oauth2-proxy OIDC protection for Kafka UI HTTPRoute ([529b44e](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/529b44ebaeabddcf3810656df292c66d3466114e))
+* protect Kafka UI with OIDC oauth2-proxy ([bcc637e](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/bcc637ea21b8599398d70b9a096e2a60ba28caba))
+
+
+### ⚙️ Chores
+
+* noop touch ([2d77aa9](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/2d77aa95b9c33b940c599451a8b12047bb81ba8c))
+* remove accidental README.md file ([ec3c0cf](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/ec3c0cfe188496b2e2e6051b629836b739094d2c))
+* remove local terraform lockfile ([f0f906e](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/f0f906e32b827a1ff50e149a2593340a6b188146))
+* remove temporary marker file ([3f708b4](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/3f708b4662039dbce49602aeaba99a108b75e3ad))
+* remove temporary PR marker ([4d56d9c](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/4d56d9cc78ff5b05fd57e778d07fbbc14b2a4ded))
+
 ## [1.4.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.3.3...v1.4.0) (2026-05-20)
 
 
