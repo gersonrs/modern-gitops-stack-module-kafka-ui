@@ -15,6 +15,6 @@ spec:
     - {{ $httproute.host | quote }}
   rules:
     - backendRefs:
-        - name: kafka-ui
-          port: 80
+        - name: {{ $httproute.backend_service | default "kafka-ui" }}
+          port: {{ $httproute.backend_port | default 80 }}
 {{- end }}

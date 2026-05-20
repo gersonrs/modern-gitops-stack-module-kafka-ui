@@ -51,7 +51,27 @@ locals {
         host              = local.domain
         gateway_name      = var.gateway_name
         gateway_namespace = var.gateway_namespace
+        backend_service   = var.oidc != null ? "kafka-ui-oauth2-proxy" : "kafka-ui"
+        backend_port      = var.oidc != null ? 4180 : 80
       }
     }
   }]
+
+  helm_values_oauth2proxy = var.oidc != null ? [{
+    oauth2proxy = {
+      enabled      = true
+      upstreamUrl  = "http://kafka-ui:80"
+      redirectUrl  = "https://${local.domain}/oauth2/callback"
+      cookieSecret = random_password.oauth2_proxy_cookie_secret.result
+      oidc = {
+        issuerUrl    = var.oidc.issuer_url
+        clientId     = var.oidc.client_id
+        clientSecret = var.oidc.client_secret
+      }
+      extraArgs = concat(
+        var.oidc.oauth2_proxy_extra_args,
+        [for g in var.allowed_groups : "--allowed-group=${g}"]
+      )
+    }
+  }] : []
 }
