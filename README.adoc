@@ -9,11 +9,15 @@ The following requirements are needed by this module:
 
 - [[requirement_null]] <<requirement_null,null>> (>= 3)
 
+- [[requirement_random]] <<requirement_random,random>> (>= 3)
+
 - [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
 
 === Providers
 
 The following providers are used by this module:
+
+- [[provider_random]] <<provider_random,random>> (>= 3)
 
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
@@ -31,6 +35,7 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/project[argocd_project.this] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
+- https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.oauth2_proxy_cookie_secret] (resource)
 - https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/service[kubernetes_service.kafka-ui] (data source)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] (data source)
 
@@ -98,7 +103,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.4.0"`
+Default: `"v1.5.0"`
 
 ==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
 
@@ -172,6 +177,34 @@ Type: `string`
 
 Default: `"istio-ingress"`
 
+==== [[input_oidc]] <<input_oidc,oidc>>
+
+Description: OIDC configuration for oauth2-proxy authentication in front of Kafka UI.
+
+Type:
+[source,hcl]
+----
+object({
+    issuer_url              = string
+    oauth_url               = string
+    token_url               = string
+    api_url                 = string
+    client_id               = string
+    client_secret           = string
+    oauth2_proxy_extra_args = optional(list(string), [])
+  })
+----
+
+Default: `null`
+
+==== [[input_allowed_groups]] <<input_allowed_groups,allowed_groups>>
+
+Description: List of Keycloak groups allowed to access Kafka UI. When empty, any authenticated user is allowed.
+
+Type: `list(string)`
+
+Default: `[]`
+
 === Outputs
 
 The following outputs are exported:
@@ -206,6 +239,7 @@ Description: Kafka-ui endpoint external
 |Name |Version
 |[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 6
 |[[requirement_null]] <<requirement_null,null>> |>= 3
+|[[requirement_random]] <<requirement_random,random>> |>= 3
 |[[requirement_utils]] <<requirement_utils,utils>> |>= 1
 |===
 
@@ -214,9 +248,10 @@ Description: Kafka-ui endpoint external
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_utils]] <<provider_utils,utils>> |>= 1
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
 |[[provider_null]] <<provider_null,null>> |>= 3
+|[[provider_random]] <<provider_random,random>> |>= 3
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
+|[[provider_utils]] <<provider_utils,utils>> |>= 1
 |[[provider_kubernetes]] <<provider_kubernetes,kubernetes>> |n/a
 |===
 
@@ -229,6 +264,7 @@ Description: Kafka-ui endpoint external
 |https://registry.terraform.io/providers/argoproj-labs/argocd/latest/docs/resources/project[argocd_project.this] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] |resource
+|https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.oauth2_proxy_cookie_secret] |resource
 |https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/service[kubernetes_service.kafka-ui] |data source
 |https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] |data source
 |===
@@ -277,7 +313,7 @@ Description: Kafka-ui endpoint external
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.4.0"`
+|`"v1.5.0"`
 |no
 
 |[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
@@ -346,6 +382,32 @@ object({
 |Namespace of the Istio Gateway resource.
 |`string`
 |`"istio-ingress"`
+|no
+
+|[[input_oidc]] <<input_oidc,oidc>>
+|OIDC configuration for oauth2-proxy authentication in front of Kafka UI.
+|
+
+[source]
+----
+object({
+    issuer_url              = string
+    oauth_url               = string
+    token_url               = string
+    api_url                 = string
+    client_id               = string
+    client_secret           = string
+    oauth2_proxy_extra_args = optional(list(string), [])
+  })
+----
+
+|`null`
+|no
+
+|[[input_allowed_groups]] <<input_allowed_groups,allowed_groups>>
+|List of Keycloak groups allowed to access Kafka UI. When empty, any authenticated user is allowed.
+|`list(string)`
+|`[]`
 |no
 
 |===
