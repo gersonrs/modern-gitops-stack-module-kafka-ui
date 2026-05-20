@@ -15,11 +15,11 @@ The following requirements are needed by this module:
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>> (>= 3)
-
 - [[provider_argocd]] <<provider_argocd,argocd>> (>= 6)
 
 - [[provider_utils]] <<provider_utils,utils>> (>= 1)
+
+- [[provider_null]] <<provider_null,null>> (>= 3)
 
 - [[provider_kubernetes]] <<provider_kubernetes,kubernetes>>
 
@@ -98,7 +98,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v1.3.3"`
+Default: `"v1.4.0"`
 
 ==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
 
@@ -156,6 +156,22 @@ Type: `map(string)`
 
 Default: `{}`
 
+==== [[input_gateway_name]] <<input_gateway_name,gateway_name>>
+
+Description: Name of the Istio Gateway resource to attach the HTTPRoute to.
+
+Type: `string`
+
+Default: `"istio-gateway"`
+
+==== [[input_gateway_namespace]] <<input_gateway_namespace,gateway_namespace>>
+
+Description: Namespace of the Istio Gateway resource.
+
+Type: `string`
+
+Default: `"istio-ingress"`
+
 === Outputs
 
 The following outputs are exported:
@@ -198,8 +214,8 @@ Description: Kafka-ui endpoint external
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
 |[[provider_utils]] <<provider_utils,utils>> |>= 1
+|[[provider_argocd]] <<provider_argocd,argocd>> |>= 6
 |[[provider_null]] <<provider_null,null>> |>= 3
 |[[provider_kubernetes]] <<provider_kubernetes,kubernetes>> |n/a
 |===
@@ -261,7 +277,7 @@ Description: Kafka-ui endpoint external
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v1.3.3"`
+|`"v1.4.0"`
 |no
 
 |[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
@@ -319,6 +335,18 @@ object({
 |`string`
 |n/a
 |yes
+
+|[[input_gateway_name]] <<input_gateway_name,gateway_name>>
+|Name of the Istio Gateway resource to attach the HTTPRoute to.
+|`string`
+|`"istio-gateway"`
+|no
+
+|[[input_gateway_namespace]] <<input_gateway_namespace,gateway_namespace>>
+|Namespace of the Istio Gateway resource.
+|`string`
+|`"istio-ingress"`
+|no
 
 |===
 
