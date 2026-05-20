@@ -2,6 +2,11 @@ resource "null_resource" "dependencies" {
   triggers = var.dependency_ids
 }
 
+resource "random_password" "oauth2_proxy_cookie_secret" {
+  length  = 32
+  special = false
+}
+
 resource "argocd_project" "this" {
   count = var.argocd_project == null ? 1 : 0
 
@@ -31,7 +36,7 @@ resource "argocd_project" "this" {
 }
 
 data "utils_deep_merge_yaml" "values" {
-  input = [for i in concat(local.helm_values, local.helm_values_httproute, var.helm_values) : yamlencode(i)]
+  input = [for i in concat(local.helm_values, local.helm_values_httproute, local.helm_values_oauth2proxy, var.helm_values) : yamlencode(i)]
 }
 
 resource "argocd_application" "this" {
