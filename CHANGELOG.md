@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.5.0...v1.5.1) (2026-05-20)
+
+
+### 🔥 Bug Fixes
+
+* remove merge markers from kafka-ui httproute ([8d557ee](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/8d557ee0c3ec5b9579b47c4a22eaeee50e77c78b))
+
 ## [1.5.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.4.0...v1.5.0) (2026-05-20)
 
 
