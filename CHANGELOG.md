@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.6.0...v2.0.0) (2026-11-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* provider major bumps and a stricter Terraform baseline; consumers must run `terraform init -upgrade`.
+
+### 🚀 New Features
+
+* upgrade charts, providers and Terraform baseline ([#20](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/issues/20)) ([0612ede](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/0612ede867939caeb2ab5d870d8e9e2bccbea395))
+
 ## [1.6.0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v1.5.1...v1.6.0) (2026-07-11)
 
 
