@@ -5,29 +5,31 @@
 
 The following requirements are needed by this module:
 
-- [[requirement_argocd]] <<requirement_argocd,argocd>> (>= 6)
+- [[requirement_terraform]] <<requirement_terraform,terraform>> (>= 1.9.0)
 
-- [[requirement_kubernetes]] <<requirement_kubernetes,kubernetes>> (>= 2)
+- [[requirement_argocd]] <<requirement_argocd,argocd>> (~> 7.18)
 
-- [[requirement_null]] <<requirement_null,null>> (>= 3)
+- [[requirement_kubernetes]] <<requirement_kubernetes,kubernetes>> (~> 3.5)
 
-- [[requirement_random]] <<requirement_random,random>> (>= 3)
+- [[requirement_null]] <<requirement_null,null>> (~> 3.3)
 
-- [[requirement_utils]] <<requirement_utils,utils>> (>= 1)
+- [[requirement_random]] <<requirement_random,random>> (~> 3.9)
+
+- [[requirement_utils]] <<requirement_utils,utils>> (~> 2.7)
 
 === Providers
 
 The following providers are used by this module:
 
-- [[provider_null]] <<provider_null,null>> (3.3.0)
+- [[provider_null]] <<provider_null,null>> (3.3.2)
 
-- [[provider_random]] <<provider_random,random>> (3.9.0)
+- [[provider_random]] <<provider_random,random>> (3.9.1)
 
-- [[provider_kubernetes]] <<provider_kubernetes,kubernetes>> (3.1.0)
+- [[provider_kubernetes]] <<provider_kubernetes,kubernetes>> (3.5.0)
 
-- [[provider_argocd]] <<provider_argocd,argocd>> (7.15.3)
+- [[provider_argocd]] <<provider_argocd,argocd>> (7.18.0)
 
-- [[provider_utils]] <<provider_utils,utils>> (2.5.0)
+- [[provider_utils]] <<provider_utils,utils>> (2.7.0)
 
 === Resources
 
@@ -286,11 +288,12 @@ Description: Kafka-ui endpoint external
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[requirement_argocd]] <<requirement_argocd,argocd>> |>= 6
-|[[requirement_kubernetes]] <<requirement_kubernetes,kubernetes>> |>= 2
-|[[requirement_null]] <<requirement_null,null>> |>= 3
-|[[requirement_random]] <<requirement_random,random>> |>= 3
-|[[requirement_utils]] <<requirement_utils,utils>> |>= 1
+|[[requirement_terraform]] <<requirement_terraform,terraform>> |>= 1.9.0
+|[[requirement_argocd]] <<requirement_argocd,argocd>> |~> 7.18
+|[[requirement_kubernetes]] <<requirement_kubernetes,kubernetes>> |~> 3.5
+|[[requirement_null]] <<requirement_null,null>> |~> 3.3
+|[[requirement_random]] <<requirement_random,random>> |~> 3.9
+|[[requirement_utils]] <<requirement_utils,utils>> |~> 2.7
 |===
 
 = Providers
@@ -298,11 +301,11 @@ Description: Kafka-ui endpoint external
 [cols="a,a",options="header,autowidth"]
 |===
 |Name |Version
-|[[provider_null]] <<provider_null,null>> |3.3.0
-|[[provider_random]] <<provider_random,random>> |3.9.0
-|[[provider_kubernetes]] <<provider_kubernetes,kubernetes>> |3.1.0
-|[[provider_argocd]] <<provider_argocd,argocd>> |7.15.3
-|[[provider_utils]] <<provider_utils,utils>> |2.5.0
+|[[provider_null]] <<provider_null,null>> |3.3.2
+|[[provider_random]] <<provider_random,random>> |3.9.1
+|[[provider_kubernetes]] <<provider_kubernetes,kubernetes>> |3.5.0
+|[[provider_argocd]] <<provider_argocd,argocd>> |7.18.0
+|[[provider_utils]] <<provider_utils,utils>> |2.7.0
 |===
 
 = Resources
