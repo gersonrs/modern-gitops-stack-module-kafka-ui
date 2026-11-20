@@ -9,7 +9,7 @@ output "cluster_dns" {
 }
 output "cluster_ip" {
   description = "Kafka-ui cluster ip internal"
-  value       = data.kubernetes_service.kafka-ui.spec[0].cluster_ip
+  value       = data.kubernetes_service_v1.kafka-ui.spec[0].cluster_ip
 }
 
 output "endpoint" {
