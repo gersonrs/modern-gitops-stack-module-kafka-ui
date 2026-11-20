@@ -127,7 +127,7 @@ resource "null_resource" "this" {
   ]
 }
 
-data "kubernetes_service" "kafka-ui" {
+data "kubernetes_service_v1" "kafka-ui" {
   metadata {
     name      = "kafka-ui"
     namespace = "observability"
