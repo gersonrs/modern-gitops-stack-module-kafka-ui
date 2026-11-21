@@ -1,7 +1,7 @@
 locals {
   domain         = format("kafka-ui.%s", trimprefix("${var.subdomain}.${var.base_domain}", "."))
   domain_full    = format("kafka-ui.%s.%s", trimprefix("${var.subdomain}.${var.cluster_name}", "."), var.base_domain)
-  kafka_password = lookup(data.kubernetes_secret.kafka_user.data, var.kafka_password_secret_key, "")
+  kafka_password = lookup(data.kubernetes_secret_v1.kafka_user.data, var.kafka_password_secret_key, "")
 
   helm_values = [{
     kafka-ui = {
