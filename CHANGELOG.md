@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v2.0.1...v2.0.2) (2026-11-21)
+
+
+### 🔥 Bug Fixes
+
+* use kubernetes_secret_v1 data source ([#24](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/issues/24)) ([6e23fd0](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/6e23fd025480fc9d947a5dfd05e73b8bfff5b889))
+
 ## [2.0.1](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v2.0.0...v2.0.1) (2026-11-20)
 
 
