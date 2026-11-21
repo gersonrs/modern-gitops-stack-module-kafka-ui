@@ -40,7 +40,7 @@ The following resources are used by this module:
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] (resource)
 - https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] (resource)
 - https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.oauth2_proxy_cookie_secret] (resource)
-- https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/secret[kubernetes_secret.kafka_user] (data source)
+- https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/secret_v1[kubernetes_secret_v1.kafka_user] (data source)
 - https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/service_v1[kubernetes_service_v1.kafka-ui] (data source)
 - https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] (data source)
 
@@ -108,7 +108,7 @@ Description: Override of target revision of the application chart.
 
 Type: `string`
 
-Default: `"v2.0.1"`
+Default: `"v2.0.2"`
 
 ==== [[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
 
@@ -303,8 +303,8 @@ Description: Kafka-ui endpoint external
 |Name |Version
 |[[provider_random]] <<provider_random,random>> |3.9.0
 |[[provider_kubernetes]] <<provider_kubernetes,kubernetes>> |3.1.0
-|[[provider_argocd]] <<provider_argocd,argocd>> |7.15.3
 |[[provider_utils]] <<provider_utils,utils>> |2.5.0
+|[[provider_argocd]] <<provider_argocd,argocd>> |7.15.3
 |[[provider_null]] <<provider_null,null>> |3.3.0
 |===
 
@@ -318,7 +318,7 @@ Description: Kafka-ui endpoint external
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.dependencies] |resource
 |https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource[null_resource.this] |resource
 |https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password[random_password.oauth2_proxy_cookie_secret] |resource
-|https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/secret[kubernetes_secret.kafka_user] |data source
+|https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/secret_v1[kubernetes_secret_v1.kafka_user] |data source
 |https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/data-sources/service_v1[kubernetes_service_v1.kafka-ui] |data source
 |https://registry.terraform.io/providers/cloudposse/utils/latest/docs/data-sources/deep_merge_yaml[utils_deep_merge_yaml.values] |data source
 |===
@@ -367,7 +367,7 @@ Description: Kafka-ui endpoint external
 |[[input_target_revision]] <<input_target_revision,target_revision>>
 |Override of target revision of the application chart.
 |`string`
-|`"v2.0.1"`
+|`"v2.0.2"`
 |no
 
 |[[input_cluster_issuer]] <<input_cluster_issuer,cluster_issuer>>
