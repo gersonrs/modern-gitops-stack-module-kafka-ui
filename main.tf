@@ -7,7 +7,7 @@ resource "random_password" "oauth2_proxy_cookie_secret" {
   special = false
 }
 
-data "kubernetes_secret" "kafka_user" {
+data "kubernetes_secret_v1" "kafka_user" {
   metadata {
     name      = var.kafka_password_secret_name
     namespace = var.kafka_password_secret_namespace
