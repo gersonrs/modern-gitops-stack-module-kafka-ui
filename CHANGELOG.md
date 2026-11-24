@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v2.0.2...v2.0.3) (2026-11-24)
+
+
+### 📚 Documentation
+
+* add usage and dependencies to the module documentation ([#26](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/issues/26)) ([ebc7f4a](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/commit/ebc7f4a3e374bd422ade1874e7af08a9f978d2c6))
+
 ## [2.0.2](https://github.com/gersonrs/modern-gitops-stack-module-kafka-ui/compare/v2.0.1...v2.0.2) (2026-11-21)
 
 
