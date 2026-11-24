@@ -1,4 +1,54 @@
 = modern-gitops-stack-module-kafka-ui
+// Document attributes to replace along the document
+:kafka-ui-chart-version: 0.7.6
+:original-repo-url: https://github.com/provectus/kafka-ui-charts
+
+A https://modern-gitops-stack.io[Modern GitOps Stack] module to deploy Kafka UI, a web interface to browse brokers, topics, consumer groups and messages.
+
+The kafka-ui chart used by this module is shipped in this repository as well, in order to avoid any unwanted behaviors caused by unsupported versions.
+
+[cols="1,1,1",options="autowidth,header"]
+|===
+|Current Chart Version |Original Repository |Default Values
+|*0.7.6* |https://github.com/provectus/kafka-ui-charts/tree/main/charts/kafka-ui[kafka-ui] |https://artifacthub.io/packages/helm/kafka-ui/kafka-ui/0.7.6?modal=values[`values.yaml`]
+|===
+
+== Usage
+
+This module can be declared by adding the following block to your Terraform configuration:
+
+[source,terraform]
+----
+module "kafka-ui" {
+  source = "git::https://github.com/GersonRS/modern-gitops-stack-module-kafka-ui.git?ref=<RELEASE>"
+
+  cluster_name      = local.cluster_name
+  base_domain       = local.base_domain
+  subdomain         = local.subdomain
+  cluster_issuer    = local.cluster_issuer
+  app_autosync      = local.app_autosync
+  kafka_broker_name = "edh-kafka-bootstrap"
+
+  dependency_ids = {
+    strimzi = module.strimzi.id
+    kafka   = module.kafka.id
+  }
+}
+----
+
+The application is deployed to the `observability` namespace.
+
+== Technical Reference
+
+=== Dependencies
+
+==== `module.strimzi.id`
+
+Kafka UI connects to the Strimzi-managed Kafka cluster.
+
+==== `module.kafka.id`
+
+The Kafka cluster must exist before Kafka UI starts.
 
 // BEGIN_TF_DOCS
 === Requirements
