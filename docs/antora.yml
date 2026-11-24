@@ -1,6 +1,6 @@
 ---
-name: "minio"
-title: "MinIO Module"
+name: "kafka-ui"
+title: "Kafka UI Module"
 version: true
 start_page: README.adoc
 nav:
